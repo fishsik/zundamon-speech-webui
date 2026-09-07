@@ -33,8 +33,11 @@ tts.tts_to_file(
     file_path=output_path,
     speaker_wav=ref_audio_path,
     language="en",          # 출력할 언어 (영어)
-    gpt_cond_len=3,         # 조건부 오디오 길이 (초)
-    temperature=0.7         # 생성 다양성 조절
+    eval_text=reference_text,
+    temperature=0.4,         # 생성 다양성 조절
+    repetition_penalty=2.0
 )
 
 print(f"영어 음성 파일 생성 완료: {output_path}")
+
+#python test.py로 실행
