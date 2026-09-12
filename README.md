@@ -179,3 +179,43 @@ https://zunko.jp/con_ongen_kiyaku.html
 
 
 
+나중에 직접 설치해보자.
+
+사용자 가이드 (https://www.youtube.com/watch?v=JgEv2NH3EC4): 근데, 이거 프로그램 사용법 같음. 나중에 api로 어떻게 쓰는지 확인..
+visual studio build tool(c++), cmake, ffmpeg.exe, ffprobe.exe를 미리 설치해야 됨.
+프로그램 구동에 streamlit도 필요하니 미리 다운 받아야 됨.
+pip install -r requirements.txt으로 필요 라이브러리 설치
+python 설치(3.9추천, 더 높아도 무방??)
+
+pytorch 설치
+pip install torch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 --index-url https://download.pytorch.org/whl/cu121
+정확한 파일은 컴퓨터 환경에 따라 달라짐..
+
+
+git clone 실행.
+git clone --recursive https://github.com/zunzun999/zundamon-speech-webui.git
+cd zundamon-speech-webui 
+
+https://github.com/zunzun999/GPT-SoVITS.git의 코드 zip으로 다운받고, 압축 푼 뒤에 이 폴더를 clone했던, 디렉토리에 넣음.
+
+
+step 2
+G2PWModel_1.1 모델을 다운받은 뒤 이름을 G2PWModel로 변경해서
+zundamon-speech-webui/GPT-SoVITS/GPT-SoVITS/text 폴더 안에 폴더 째로 복붙함.
+
+pretrained models는 다운받은 폴더의 "내용물"을 복사해서
+zundamon-speech-webui/GPT-SoVITS/GPT_SoVITS/pretrained_models 폴더에 붙여넣음.
+
+Zundamon Fine-Tuned Model도 다운받은 폴더 안의 "내용물"을 복사해서
+zundamon-speech-webui/GPT-SoVITS 폴더에 붙여넣기.
+
+처음 다운 받았던, ffmpeg.exe, ffprobe.exe 파일을 zundamon-speech-webui/GPT-SoVITS 위치에 이동하기.
+
+
+실제로 webui 실행하는 법
+cd zundamon-speech-webui
+python zundamon_speech_run.py을 실행함.
+이후, cli에서 뜨는 url 들어가서 생성할 수 있음.
+
+
+나중에 이거 api로 어떻게 바꾸는지 좀 분석해보자.
